@@ -162,31 +162,13 @@ class acf_field_css_margin_padding extends acf_field {
 			$field['value']['margin-bottom']				= "0px";
 			$field['value']['margin-left']					= "0px";
 			
-			$field['value']['border']						= "none";
-			$field['value']['border-top']					= "0px";
-			$field['value']['border-right']					= "0px";
-			$field['value']['border-bottom']				= "0px";
-			$field['value']['border-left']					= "0px";
-			
 			$field['value']['padding']						= "0px 0px 0px 0px";
 			$field['value']['padding-top']					= "0px";
 			$field['value']['padding-right']				= "0px";
 			$field['value']['padding-bottom']				= "0px";
 			$field['value']['padding-left']					= "0px";
 			
-			$field['value']['background-color']				= '';
-			
-			$field['value']['color']						= '';
-
-			$field['value']['border-color']					= '';
-
-			$field['value']['border-style']					= 'none';
-			
-			$field['value']['border-radius']				= "0px";
-			$field['value']['border-top-left-radius']		= "0px";
-			$field['value']['border-top-right-radius']		= "0px";
-			$field['value']['border-bottom-right-radius']	= "0px";
-			$field['value']['border-bottom-left-radius']	= "0px";
+		
 		}
 		
 		$field_value = $field['value'];
@@ -200,14 +182,7 @@ class acf_field_css_margin_padding extends acf_field {
 			value = "<?php echo $field_value['margin']; ?>"
 			data-fieldname = "<?php echo $field['name']; ?>"
 		>
-		<input
-			type = "hidden"
-			class = "acf-css-border acf-css-border-shorthand css-layout-input"
-			name = "<?php echo $field['name']; ?>[border]"
-			id = "<?php echo $fieldname; ?>_border"
-			value = "<?php echo $field_value['border']; ?>"
-			data-fieldname = "<?php echo $field['name']; ?>"
-		>
+	
 		<input
 			type = "hidden"
 			class = "acf-css-padding acf-css-padding-shorthand css-layout-input"
@@ -216,243 +191,206 @@ class acf_field_css_margin_padding extends acf_field {
 			value = "<?php echo $field_value['padding']; ?>"
 			data-fieldname = "<?php echo $field['name']; ?>"
 		>
-		<input
-			type = "hidden"
-			class = "acf-css-borderradius acf-css-borderradius-shorthand css-layout-input"
-			name = "<?php echo $field['name']; ?>[border-radius]"
-			id = "<?php echo $fieldname; ?>_border-radius"
-			value = "<?php echo $field_value['border-radius']; ?>"
-			data-fieldname = "<?php echo $field['name']; ?>"
-		>
+		
 		<div class="container acf-container-css_layout">
 			<div class="infotext">
 				<p><?php _e('Note, that if you enter a value without a unit, the default unit <em>px</em> will automatically appended. If an invalid value is entered, it is replaced by the default value <em>0px</em>. Accepted units are: <em>px</em>, <em>%</em> and <em>em</em></p><p>Activate the lock <span class="dashicons dashicons-lock acf-css-checkall" style="margin:0"></span> to link all values.', 'acf-css_margin_padding'); ?><p>
 			</div>
-			<div class="acf-css-layout-margin">
-				<div>
-					<span class="dashicons acf-css-info dashicons-info"></span>
-				</div>
-				<div class="acf-css-margin-caption"><?php _e('margin', 'acf-css_margin_padding'); ?><span class="dashicons dashicons-lock acf-css-checkall acf-margin-checkall" data-fieldname="<?php echo $field['name']; ?>"></span></div>
-				<input
-					type = "text"
-					class = "acf-css-margin acf-css-margin-top css-layout-input"
-					name = "<?php echo $field['name'] ?>[margin-top]"
-					id = "<?php echo $fieldname ?>_margin-top"
-					value = "<?php echo $field_value['margin-top'] ?>"
-					data-fieldname = "<?php echo $field['name']; ?>"
-					tabindex = "1"
-				>
-				<input
-					type = "text"
-					class = "acf-css-margin acf-css-margin-right css-layout-input"
-					name = "<?php echo $field['name'] ?>[margin-right]"
-					id = "<?php echo $fieldname ?>_margin-right"
-					value = "<?php echo $field_value['margin-right'] ?>"
-					data-fieldname = "<?php echo $field['name']; ?>"
-					tabindex = "2"
-				>
-				<input
-					type = "text"
-					class = "acf-css-margin acf-css-margin-bottom css-layout-input"
-					name = "<?php echo $field['name'] ?>[margin-bottom]"
-					id = "<?php echo $fieldname ?>_margin-bottom"
-					value = "<?php echo $field_value['margin-bottom'] ?>"
-					data-fieldname = "<?php echo $field['name']; ?>"
-					tabindex = "3"
-				>
-				<input
-					type = "text"
-					class = "acf-css-margin acf-css-margin-left css-layout-input"
-					name = "<?php echo $field['name'] ?>[margin-left]"
-					id = "<?php echo $fieldname ?>_margin-left"
-					value = "<?php echo $field_value['margin-left'] ?>"
-					data-fieldname = "<?php echo $field['name']; ?>"
-					tabindex = "4"
-				>
-				<div class="acf-css-layout-border" data-fieldname="<?php echo $field['name']; ?>" style="border-top-left-radius: <?php echo $field_value['border-top-left-radius'] ?>; border-top-right-radius: <?php echo $field_value['border-top-right-radius'] ?>; border-bottom-right-radius: <?php echo $field_value['border-bottom-right-radius'] ?>; border-bottom-left-radius: <?php echo $field_value['border-bottom-left-radius'] ?>; border-color: <?php echo $field_value['border-color'] ?>; border-style: <?php echo $field_value['border-style'] ?>; border-width: 1px; background: <?php echo $field_value['background-color'] ?>;">
-					<div class="acf-css-border-caption"><?php _e('border', 'acf-css_margin_padding'); ?><span class="dashicons dashicons-lock acf-css-checkall acf-border-checkall" data-fieldname="<?php echo $field['name']; ?>"></span></div>
-					
-					<input 
-						type = "text"
-						class = "acf-css-border acf-css-border-top css-layout-input"
-						name = "<?php echo $field['name']; ?>[border-top]"
-						id = "<?php echo $fieldname; ?>_border-top"
-						value = "<?php echo $field_value['border-top']; ?>"
-						data-fieldname = "<?php echo $field['name']; ?>"
-						tabindex = "5"
-					>
-					<input 
-						type = "text"
-						class = "acf-css-border acf-css-border-right css-layout-input"
-						name = "<?php echo $field['name']; ?>[border-right]"
-						id = "<?php echo $fieldname; ?>_border-right"
-						value = "<?php echo $field_value['border-right']; ?>"
-						data-fieldname = "<?php echo $field['name']; ?>"
-						tabindex = "6"
-					>
-					<input 
-						type = "text"
-						class = "acf-css-border acf-css-border-bottom css-layout-input"
-						name = "<?php echo $field['name']; ?>[border-bottom]"
-						id = "<?php echo $fieldname; ?>_border-bottom"
-						value = "<?php echo $field_value['border-bottom']; ?>"
-						data-fieldname = "<?php echo $field['name']; ?>"
-						tabindex = "7"
-					>
-					<input 
-						type = "text"
-						class = "acf-css-border acf-css-border-left css-layout-input"
-						name = "<?php echo $field['name']; ?>[border-left]"
-						id = "<?php echo $fieldname; ?>_border-left"
-						value = "<?php echo $field_value['border-left']; ?>"
-						data-fieldname = "<?php echo $field['name']; ?>"
-						tabindex = "8"
-					>
-					<div class="acf-css-layout-padding" data-fieldname="<?php echo $field['name']; ?>" style="background: transparent;">
-						<div class="acf-css-padding-caption"><?php _e('padding', 'acf-css_margin_padding'); ?><span class="dashicons dashicons-lock acf-css-checkall acf-padding-checkall" data-fieldname="<?php echo $field['name']; ?>"></span></div>
-						<input 
-							type = "text"
-							class = "acf-css-padding acf-css-padding-top css-layout-input"
-							name = "<?php echo $field['name']; ?>[padding-top]"
-							id = "<?php echo $fieldname; ?>_padding-top"
-							value = "<?php echo $field_value['padding-top']; ?>"
-							data-fieldname = "<?php echo $field['name']; ?>"
-							tabindex = "9"
-						>
-						<input 
-							type = "text"
-							class = "acf-css-padding acf-css-padding-right css-layout-input"
-							name = "<?php echo $field['name']; ?>[padding-right]"
-							id = "<?php echo $fieldname; ?>_padding-right"
-							value = "<?php echo $field_value['padding-right']; ?>"
-							data-fieldname = "<?php echo $field['name']; ?>"
-							tabindex = "10"
-						>
-						<input 
-							type = "text"
-							class = "acf-css-padding acf-css-padding-bottom css-layout-input"
-							name = "<?php echo $field['name']; ?>[padding-bottom]"
-							id = "<?php echo $fieldname; ?>_padding-bottom"
-							value = "<?php echo $field_value['padding-bottom']; ?>"
-							data-fieldname = "<?php echo $field['name']; ?>"
-							tabindex = "11"
-						>
-						<input 
-							type = "text"
-							class = "acf-css-padding acf-css-padding-left css-layout-input"
-							name = "<?php echo $field['name']; ?>[padding-left]"
-							id = "<?php echo $fieldname; ?>_padding-left"
-							value = "<?php echo $field_value['padding-left']; ?>"
-							data-fieldname = "<?php echo $field['name']; ?>"
-							tabindex = "12"
-						>
-						<div class="acf-css-layout-center">
-							<div class="acf-css-center-caption" data-fieldname="<?php echo $field['name']; ?>">
-								<p style="color: <?php echo $field_value['color']; ?>; font-size:13px; text-align:center; padding: 0; margin:0; line-height:16px;">Lorem ipsum dolor sit amet, consectetur adipisici elit</p>
-							</div>
-						</div>
-					</div>				
-				</div>
-			</div>
 			<div class="acf-border-settings">
-				<div class="acf-css-border-settings acf-css-back-color-settings">
-					<label for= "<?php echo $fieldname; ?>_background-color"><?php _e('Background Color', 'acf-css_margin_padding'); ?></label>
-					<input
-						class = "acf-css-back-color-field"
-						name = "<?php echo $field['name']; ?>[background-color]"
-						id = "<?php echo $fieldname; ?>_background-color"
-						type = "text"
-						value = "<?php echo $field_value['background-color']; ?>"
-						data-fieldname = "<?php echo $field['name']; ?>"
-					></div>
-					<div class="acf-css-border-settings acf-css-border-color-settings">
-					<label for= "<?php echo $fieldname; ?>_border-color"><?php _e('Border Color', 'acf-css_margin_padding'); ?></label>
-					<input
-						class = "acf-css-border-color-field"
-						name = "<?php echo $field['name']; ?>[border-color]"
-						id = "<?php echo $fieldname; ?>_border-color"
-						type = "text"
-						value= "<?php echo $field_value['border-color']; ?>"
-						data-fieldname = "<?php echo $field['name']; ?>"
-					></div>
-					<div class="clear"></div>
-					<div class="acf-css-border-settings acf-css-text-color-settings">
-					<label for= "<?php echo $fieldname; ?>_color"><?php _e('Text Color', 'acf-css_margin_padding'); ?></label>
-					<input
-						class = "acf-css-text-color-field"
-						name = "<?php echo $field['name']; ?>[color]"
-						id = "<?php echo $fieldname; ?>_color"
-						type = "text"
-						value= "<?php echo $field_value['color']; ?>"
-						data-fieldname = "<?php echo $field['name']; ?>"
-					></div>
-					<div class="acf-css-border-settings acf-css-border-style-settings">
-					<label for= "<?php echo $fieldname; ?>_border-style"><?php _e('Border Style', 'acf-css_margin_padding'); ?></label>
-					<input
-						name="<?php echo $field['name']; ?>[border-style]"
-						id="<?php echo $fieldname; ?>_border-style"
-						class = "select2-container border-style"
-						value="<?php echo $field_value['border-style']; ?>"
-						data-fieldname = "<?php echo $field['name']; ?>"
-					/></div>
-					<div class="clear"></div>
-					<div>
-					<label><?php _e('Border Radius', 'acf-css_margin_padding'); ?> <span class="dashicons dashicons-lock acf-css-checkall acf-border-radius-checkall" data-fieldname="<?php echo $field['name']; ?>"></span></label>
 
-					<div class="left_col">
-						<div>
-							<label for= "<?php echo $fieldname; ?>_border-top-left-radius"><?php _e('top left', 'acf-css_margin_padding'); ?></label>
-							<input 
+					<div class="paddings">
+					<label><?php _e('Padding Desktop / Padding Mobile', 'acf-css_margin_padding'); ?> <span class="dashicons dashicons-lock acf-css-checkall acf-border-radius-checkall" data-fieldname="<?php echo $field['name']; ?>"></span></label>
+					<div class="content">
+							<div class="left_col">
+						
+							<label for= "<?php echo $fieldname; ?>_padding-top-desktop"><?php _e('padding top', 'acf-css_padding_padding'); ?></label>
+							<input
 								type = "text"
-								class = "acf-css-border-radius acf-css-border-radius_topleft css-layout-input"
-								name = "<?php echo $field['name']; ?>[border-top-left-radius]"
-								id = "<?php echo $fieldname; ?>_border-top-left-radius"
-								value = "<?php echo $field_value['border-top-left-radius']; ?>"
+								class = "acf-css-padding acf-css-padding-top css-layout-input"
+								name = "<?php echo $field['name'] ?>[padding-top]"
+								id = "<?php echo $fieldname ?>_padding-top"
+								value = "<?php echo $field_value['padding-top'] ?>"
 								data-fieldname = "<?php echo $field['name']; ?>"
-								tabindex = "13"
+								tabindex = "1"
+							>
+							<div class="clear"></div>
+							<label for= "<?php echo $fieldname; ?>_padding-top-desktop"><?php _e('padding right', 'acf-css_padding_padding'); ?></label>
+							<input
+								type = "text"
+								class = "acf-css-padding acf-css-padding-right css-layout-input"
+								name = "<?php echo $field['name'] ?>[padding-right]"
+								id = "<?php echo $fieldname ?>_padding-right"
+								value = "<?php echo $field_value['padding-right'] ?>"
+								data-fieldname = "<?php echo $field['name']; ?>"
+								tabindex = "2"
+							>
+							<div class="clear"></div>
+							<label for= "<?php echo $fieldname; ?>_padding-top-desktop"><?php _e('padding bottom', 'acf-css_padding_padding'); ?></label>
+							<input
+								type = "text"
+								class = "acf-css-padding acf-css-padding-bottom css-layout-input"
+								name = "<?php echo $field['name'] ?>[padding-bottom]"
+								id = "<?php echo $fieldname ?>_padding-bottom"
+								value = "<?php echo $field_value['padding-bottom'] ?>"
+								data-fieldname = "<?php echo $field['name']; ?>"
+								tabindex = "3"
+							>
+							<div class="clear"></div>
+							<label for= "<?php echo $fieldname; ?>_padding-top-desktop"><?php _e('padding left', 'acf-css_padding_padding'); ?></label>
+							<input
+								type = "text"
+								class = "acf-css-padding acf-css-padding-left css-layout-input"
+								name = "<?php echo $field['name'] ?>[padding-left]"
+								id = "<?php echo $fieldname ?>_padding-left"
+								value = "<?php echo $field_value['padding-left'] ?>"
+								data-fieldname = "<?php echo $field['name']; ?>"
+								tabindex = "4"
 							>
 						</div>
-						<div>
-							<label for= "<?php echo $fieldname; ?>_border-bottom-left-radius"><?php _e('bottom left', 'acf-css_margin_padding'); ?></label>
-							<input 
+						<div class="right_col">
+							<label for= "<?php echo $fieldname; ?>_padding-top-mobile"><?php _e('padding top mobile', 'acf-css_padding_padding'); ?></label>
+							<input
 								type = "text"
-								class = "acf-css-border-radius acf-css-border-radius_bottomleft css-layout-input"
-								name = "<?php echo $field['name']; ?>[border-bottom-left-radius]"
-								id = "<?php echo $fieldname; ?>_border-bottom-left-radius"
-								value = "<?php echo $field_value['border-bottom-left-radius']; ?>"
+								class = "acf-css-padding acf-css-padding-top css-layout-input"
+								name = "<?php echo $field['name'] ?>[padding-top]"
+								id = "<?php echo $fieldname ?>_padding-top"
+								value = "<?php echo $field_value['padding-top'] ?>"
 								data-fieldname = "<?php echo $field['name']; ?>"
-								tabindex = "15"
+								tabindex = "1"
+							>
+							<div class="clear"></div>
+							<label for= "<?php echo $fieldname; ?>_padding-top-desktop"><?php _e('padding right mobile', 'acf-css_padding_padding'); ?></label>
+							<input
+								type = "text"
+								class = "acf-css-padding acf-css-padding-right css-layout-input"
+								name = "<?php echo $field['name'] ?>[padding-right]"
+								id = "<?php echo $fieldname ?>_padding-right"
+								value = "<?php echo $field_value['padding-right'] ?>"
+								data-fieldname = "<?php echo $field['name']; ?>"
+								tabindex = "2"
+							>
+							<div class="clear"></div>
+							<label for= "<?php echo $fieldname; ?>_padding-top-desktop"><?php _e('padding bottom mobile', 'acf-css_padding_padding'); ?></label>
+							<input
+								type = "text"
+								class = "acf-css-padding acf-css-padding-bottom css-layout-input"
+								name = "<?php echo $field['name'] ?>[padding-bottom]"
+								id = "<?php echo $fieldname ?>_padding-bottom"
+								value = "<?php echo $field_value['padding-bottom'] ?>"
+								data-fieldname = "<?php echo $field['name']; ?>"
+								tabindex = "3"
+							>
+							<div class="clear"></div>
+							<label for= "<?php echo $fieldname; ?>_padding-top-desktop"><?php _e('padding left mobile', 'acf-css_padding_padding'); ?></label>
+							<input
+								type = "text"
+								class = "acf-css-padding acf-css-padding-left css-layout-input"
+								name = "<?php echo $field['name'] ?>[padding-left]"
+								id = "<?php echo $fieldname ?>_padding-left"
+								value = "<?php echo $field_value['padding-left'] ?>"
+								data-fieldname = "<?php echo $field['name']; ?>"
+								tabindex = "4"
 							>
 						</div>
 					</div>
-
-					<div class="right_col">
-						<div>
-							<label for= "<?php echo $fieldname; ?>_border-top-right-radius"><?php _e('top right', 'acf-css_margin_padding'); ?></label>
-							<input 
-								type = "text"
-								class = "acf-css-border-radius acf-css-border-radius_topright css-layout-input"
-								name = "<?php echo $field['name']; ?>[border-top-right-radius]"
-								id = "<?php echo $fieldname; ?>_border-top-right-radius"
-								value = "<?php echo $field_value['border-top-right-radius']; ?>"
-								data-fieldname = "<?php echo $field['name']; ?>"
-								tabindex = "14"
-							>
-						</div>
-						<div>
-							<label for= "<?php echo $fieldname; ?>_border-bottom-right-radius"><?php _e('bottom right', 'acf-css_margin_padding'); ?></label>
-							<input 
-								type = "text"
-								class = "acf-css-border-radius acf-css-border-radius_bottomright css-layout-input"
-								name = "<?php echo $field['name']; ?>[border-bottom-right-radius]"
-								id = "<?php echo $fieldname; ?>_border-bottom-right-radius"
-								value = "<?php echo $field_value['border-bottom-right-radius']; ?>"
-								data-fieldname = "<?php echo $field['name']; ?>"
-								tabindex = "16"
-							>
-						</div>
+					
 					</div>
-				</div>
+					<div class="margins">
+						<label><?php _e('Margin Desktop / Margin Mobile', 'acf-css_margin_padding'); ?> <span class="dashicons dashicons-lock acf-css-checkall acf-border-radius-checkall" data-fieldname="<?php echo $field['name']; ?>"></span></label>
+						<div class="content">
+							<div class="left_col">
+							<label for= "<?php echo $fieldname; ?>_margin-top-desktop"><?php _e('margin top', 'acf-css_margin_padding'); ?></label>
+							<input
+								type = "text"
+								class = "acf-css-margin acf-css-margin-top css-layout-input"
+								name = "<?php echo $field['name'] ?>[margin-top]"
+								id = "<?php echo $fieldname ?>_margin-top"
+								value = "<?php echo $field_value['margin-top'] ?>"
+								data-fieldname = "<?php echo $field['name']; ?>"
+								tabindex = "1"
+							>
+							<div class="clear"></div>
+							<label for= "<?php echo $fieldname; ?>_margin-top-desktop"><?php _e('margin right', 'acf-css_margin_padding'); ?></label>
+							<input
+								type = "text"
+								class = "acf-css-margin acf-css-margin-right css-layout-input"
+								name = "<?php echo $field['name'] ?>[margin-right]"
+								id = "<?php echo $fieldname ?>_margin-right"
+								value = "<?php echo $field_value['margin-right'] ?>"
+								data-fieldname = "<?php echo $field['name']; ?>"
+								tabindex = "2"
+							>
+							<div class="clear"></div>
+							<label for= "<?php echo $fieldname; ?>_margin-top-desktop"><?php _e('margin bottom', 'acf-css_margin_padding'); ?></label>
+							<input
+								type = "text"
+								class = "acf-css-margin acf-css-margin-bottom css-layout-input"
+								name = "<?php echo $field['name'] ?>[margin-bottom]"
+								id = "<?php echo $fieldname ?>_margin-bottom"
+								value = "<?php echo $field_value['margin-bottom'] ?>"
+								data-fieldname = "<?php echo $field['name']; ?>"
+								tabindex = "3"
+							>
+							<div class="clear"></div>
+							<label for= "<?php echo $fieldname; ?>_margin-top-desktop"><?php _e('margin left', 'acf-css_margin_padding'); ?></label>
+							<input
+								type = "text"
+								class = "acf-css-margin acf-css-margin-left css-layout-input"
+								name = "<?php echo $field['name'] ?>[margin-left]"
+								id = "<?php echo $fieldname ?>_margin-left"
+								value = "<?php echo $field_value['margin-left'] ?>"
+								data-fieldname = "<?php echo $field['name']; ?>"
+								tabindex = "4"
+							>
+						</div>
+						<div class="right_col">
+							<label for= "<?php echo $fieldname; ?>_margin-top-mobile"><?php _e('margin top mobile', 'acf-css_margin_padding'); ?></label>
+							<input
+								type = "text"
+								class = "acf-css-margin acf-css-margin-top css-layout-input"
+								name = "<?php echo $field['name'] ?>[margin-top]"
+								id = "<?php echo $fieldname ?>_margin-top"
+								value = "<?php echo $field_value['margin-top'] ?>"
+								data-fieldname = "<?php echo $field['name']; ?>"
+								tabindex = "1"
+							>
+							<div class="clear"></div>
+							<label for= "<?php echo $fieldname; ?>_margin-top-desktop"><?php _e('margin right', 'acf-css_margin_padding'); ?></label>
+							<input
+								type = "text"
+								class = "acf-css-margin acf-css-margin-right css-layout-input"
+								name = "<?php echo $field['name'] ?>[margin-right]"
+								id = "<?php echo $fieldname ?>_margin-right"
+								value = "<?php echo $field_value['margin-right'] ?>"
+								data-fieldname = "<?php echo $field['name']; ?>"
+								tabindex = "2"
+							>
+							<div class="clear"></div>
+							<label for= "<?php echo $fieldname; ?>_margin-top-desktop"><?php _e('margin bottom', 'acf-css_margin_padding'); ?></label>
+							<input
+								type = "text"
+								class = "acf-css-margin acf-css-margin-bottom css-layout-input"
+								name = "<?php echo $field['name'] ?>[margin-bottom]"
+								id = "<?php echo $fieldname ?>_margin-bottom"
+								value = "<?php echo $field_value['margin-bottom'] ?>"
+								data-fieldname = "<?php echo $field['name']; ?>"
+								tabindex = "3"
+							>
+							<div class="clear"></div>
+							<label for= "<?php echo $fieldname; ?>_margin-top-desktop"><?php _e('margin left', 'acf-css_margin_padding'); ?></label>
+							<input
+								type = "text"
+								class = "acf-css-margin acf-css-margin-left css-layout-input"
+								name = "<?php echo $field['name'] ?>[margin-left]"
+								id = "<?php echo $fieldname ?>_margin-left"
+								value = "<?php echo $field_value['margin-left'] ?>"
+								data-fieldname = "<?php echo $field['name']; ?>"
+								tabindex = "4"
+							>
+						</div>
+						</div>
+						
+					</div>
 			</div>
 		</div>
 	<?php }
